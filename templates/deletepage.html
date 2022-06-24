@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>product</title>
+    <style>
+        body
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+    <body>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+
+        <form method="post" action="/delete_empdetails/{{ emp.id }}">
+            {% csrf_token %}
+
+            <h1>Are you sure you want to delete
+            <strong>
+                '{{ emp.employee_name }}'
+            </strong>
+        </h1>
+        <br>
+
+            <label class="row">Employee name: {{ emp.employee_name }} </label>
+            <label class="row">Address:{{ emp.address }}</label> <br>
+            <label class="row">Age:{{ emp.age }}</label> <br>
+            <label class="row">Email id:{{ emp.email_id }} </label><br>
+            <label class="row">Joining date:{{ emp.joindate }}</label> <br>
+            <label class="row">Qualification:{{ emp.qualification }}</label> <br>
+            <label class="row">Gender :{{ emp.gender }}</label><br>
+   
+            <br><a href="javascript:history.go(-1);" class="btn btn-info">
+                Go Back
+            </a>
+            <input type="submit" value="Confirm" class="btn btn-danger">
+        </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </body>
